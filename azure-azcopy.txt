@@ -1,0 +1,36 @@
+1. To create a container
+
+azcopy make "https://appstore4040.blob.core.windows.net/tmp?$KEY"
+
+2. To upload a file
+
+azcopy copy $FILE "https://appstore4040.blob.core.windows.net/tmp/$FILE?$KEY"
+
+
+3. To upload a directory
+
+azcopy copy "newdir/*" "https://appstore4040.blob.core.windows.net/tmp?$KEY"
+
+
+4. To upload a directory to a directory in the container
+
+
+azcopy copy "newdir/*" "https://appstore4040.blob.core.windows.net/tmp/newdir?$KEY"
+
+5. To upload a directory and subdirectories to a directory in the container
+
+
+
+azcopy copy "newdir/*" "https://appstore4040.blob.core.windows.net/tmp/newdir?$KEY" --recursive
+
+
+6. Download blob data
+
+azcopy copy "https://appstore4040.blob.core.windows.net/tmp/storage1.arm.json?KEY" "storage1.arm.json"
+
+
+7. copy data between two storage accounts
+
+
+
+azcopy copy "https://appstore4040.blob.core.windows.net/tmp?$KEY" "https://azcopydestination100034.blob.core.windows.net/tmp?$KEY" --recursive
